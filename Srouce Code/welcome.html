@@ -1,0 +1,213 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome Page</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: #f8f6f6;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+            margin: 20px 20px 20px 20px;
+        }
+        h2{
+            color: black;
+            text-align: left;
+            margin: 20px 40px;
+        }
+        .contain1{
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                    0 10px 10px rgba(0,0,0,0.22);
+            position: relative;
+            overflow: hidden;
+            width: 1650px;
+            max-width: 100%;
+            min-height: 60px;
+            margin: 10px 10px 10px 10px;
+        }
+        .contain1-left{
+            float: left;
+        }
+        .contain1-right{
+            float: right;
+            padding: 40px 10px 10px 10px;
+        }
+        .button {
+            border-radius: 20px;
+            border: 1px solid #2bc3ff;
+            background-color: #2b9cff;
+            color: black;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+            transform: scale(0.95);
+            outline: none;
+            background-color: transparent;
+            border-color: black;
+        }
+        .button:hover {
+            background-color: white;
+            color: #2bc3ff;
+        }
+        .contain2{
+            background-color: #2bc3ff;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                    0 10px 10px rgba(0,0,0,0.22);
+            position: relative;
+            overflow: hidden;
+            width: 1650px;
+            max-width: 100%;
+            min-height: 60px;
+            margin: 20px 10px 10px 10px;
+            height: 500px;
+        }
+        .contain2 h2{
+            color: white;
+        }
+        .contain2-1{
+            float: left;
+            width: 20%;
+            padding: 10px;
+            height: 200px;
+        }
+        .contain2-2{
+            float: left;
+            width: 20%;
+            padding: 10px;
+            height: 200px;
+        }
+        .contain2-3{
+            float: left;
+            width: 20%;
+            padding: 10px;
+            height: 200px;
+        }
+        .contain2-4{
+            float: left;
+            width: 20%;
+            padding: 10px;
+            height: 200px;  
+        }
+        .contain2-5{
+            float: left;
+            width: 20%;
+            padding: 10px;
+            height: 200px;
+        }
+        .button2{
+            border-radius: 20px;
+            border: 1px solid #2bc3ff;
+            background-color: #2b9cff;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+            transform: scale(0.95);
+            outline: none;
+            background-color: transparent;
+            border-color: #FFFFFF;
+        }
+        .button2:hover {
+            background-color: white;
+            color: #2bc3ff;
+        }
+        .contain2-b{
+            margin: 0px 0px 0px 700px;
+        }
+        .contain3{
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                    0 10px 10px rgba(0,0,0,0.22);
+            position: relative;
+            overflow: hidden;
+            width: 800px;
+            max-width: 100%;
+            min-height: 60px;
+            margin: 20px 10px 10px 400px;
+        }
+        input[type=text] {
+            width: 400px;
+            padding: 12px 200px 10px 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid black;
+            margin: 10px 10px 10px 200px;
+        }
+        
+    </style>
+    <div class="contain1">
+        <div class="contain1-left">
+            <h2>Customer Care Registry</h2>
+            <h2>Welcomes You</h2>
+        </div>
+        <div class="contain1-right">
+            <form action="/relogin" method="post">
+                <input type="submit" name="action" value="Sign Out" class="button">
+            </form>
+        </div>
+    </div>
+    <div class="contain2">
+        <div class="contain2-1">
+            <h2>Complaint ID</h2>
+        </div>
+        <div class="contain2-2">
+            <h2>Complaint Details</h2>
+        </div>
+        <div class="contain2-3">
+            <h2>Assigned Agent</h2>
+        </div>
+        <div class="contain2-4">
+            <h2>Status</h2>
+        </div>
+        <div class="contain2-5">
+            <h2>Solution</h2>
+        </div>
+        <div class="contain3">
+            <div class="title">
+                <form action="/" method="post">
+                    <input type="text" name="title"  placeholder="Enter the Title">
+                    <input type="text" name="complaint"  placeholder="Type your Complaint">
+                </form>
+            </div>
+        </div>
+        <br>
+        <div class="contain2-b">
+            <form action="/redirect" method="post">
+                <input type="submit" name="action" value="Add a Complaint" class="button2">
+            </form>
+        </div>
+    </div>
+
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "bc749225-c36f-4b6b-84ce-2f080d126e2a", // The ID of this integration.
+            region: "eu-gb", // The region your integration is hosted in.
+            serviceInstanceID: "66610931-fcad-4d78-9237-6622b322b0f2", // The ID of your service instance.
+            onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+            const t=document.createElement('script');
+            t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+        const signOutButton = document.getElementById('signOut');
+    </script>
+</body>
+</html>
