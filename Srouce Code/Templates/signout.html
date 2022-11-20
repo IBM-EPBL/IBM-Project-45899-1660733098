@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Signout Page</title>
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background: #f8f6f6;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+            margin: 20px 20px 20px 20px;
+        }
+        h2{
+            color: #f8f6f6;
+            text-align: center;
+            margin: 200px 20px 20px 40px;
+        }
+        .contain1-top{
+            background-color: #2bc3ff;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+                    0 10px 10px rgba(0,0,0,0.22);
+            position: relative;
+            overflow: hidden;
+            width: 1650px;
+            max-width: 100%;
+            min-height: 60px;
+            margin: 10px 10px 10px 10px;
+            height: 700px;
+        }
+        .button2{
+            margin: 0px 0px 0px 700px;
+            border-radius: 20px;
+            border: 1px solid #2bc3ff;
+            background-color: #2b9cff;
+            color: black;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+            transform: scale(0.95);
+            outline: none;
+            background-color: transparent;
+            border-color: black;
+        }
+        .button2:hover {
+            background-color: white;
+            color: #2bc3ff;
+        }
+        .button3{
+            margin: 0px 0px 0px 725px;
+            border-radius: 20px;
+            border: 1px solid #2bc3ff;
+            background-color: #2b9cff;
+            color: black;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+            transform: scale(0.95);
+            outline: none;
+            background-color: transparent;
+            border-color: black;
+        }
+        .button3:hover {
+            background-color: white;
+            color: #2bc3ff;
+        }
+        
+        
+    </style>
+    <div class="contain1">
+        <div class="contain1-top">
+            <h2>Your Complain has been filed</h2>
+            <form action="/welred" method="post">
+                <input type="submit" name="action" value="Add a Complaint" class="button2">
+            </form>
+            <form action="/relogin" method="post">
+                <input type="submit" name="action" value="Sign Out" class="button3">
+            </form>
+        </div>
+    </div>
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "bc749225-c36f-4b6b-84ce-2f080d126e2a", // The ID of this integration.
+            region: "eu-gb", // The region your integration is hosted in.
+            serviceInstanceID: "66610931-fcad-4d78-9237-6622b322b0f2", // The ID of your service instance.
+            onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+            const t=document.createElement('script');
+            t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+        const signOutButton = document.getElementById('signOut');
+    </script>
+</body>
+</html>
